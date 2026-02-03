@@ -5,23 +5,118 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#container {
+  font-family: 'Nunito', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  height: 20%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+main {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+#modal-login {
+  justify-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 60vh;
+  border-radius: 16px;
+  border-color: white;
+  border: 4px solid;
+  background: linear-gradient(to bottom,
+      #f9fafd 0%,
+      #eef3ff 50%,
+      #e4edff 80%,
+      #dbe7ff 100%);
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.05),
+    0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+#title-login {
+  color: #416092;
+  font-size: 2em;
+  font-weight: 500;
+  padding-top: 25px;
+}
+
+#email-login {
+  box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.05),
+    0 1px 5px rgba(0, 0, 0, 0.12);
+  width: 80%;
+  min-height: 60px;
+  color: #416092;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+#email-login-input {
+  height: 100%;
+  border: none;
+  flex: 1;
+  outline: none;
+}
+
+#password-login {
+  box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.05),
+    0 1px 5px rgba(0, 0, 0, 0.12);
+  width: 80%;
+  min-height: 60px;
+  color: #416092;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+#password-login-input {
+  height: 100%;
+  border: none;
+  flex: 1;
+  outline: none;
+}
+
+#button-login {
+  background: linear-gradient(135deg, #5B8CFF, #6FA8FF, #4F7CFF);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  margin-top: 48px;
+  min-height: 50px;
+  width: 80%;
+  font-size: larger
+}
+
+#button-login:hover {
+  box-shadow: 0 6px 12px rgba(79, 124, 255, 0.45);
+  background: linear-gradient(135deg, #4F7CFF, #6FA8FF, #5B8CFF);
+}
+
+#sign-up {
+  margin-top: 24px;
+  font-size: larger
 }
 
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
