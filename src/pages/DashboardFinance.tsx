@@ -1,17 +1,15 @@
-import CalendarHabits from "./CalendarHabits";
 import { TopBar } from "./TopBar";
 
-export default function DashboardHabits() {
+export default function DashboardFinance() {
     return (
         <>
             <div id="cointainer">
                 <main>
-                    <section id="container-dashboard-habits">
+                    <section id="container-dashboard-finance">
                         <TopBar></TopBar>
-                        <CalendarHabits></CalendarHabits>
                     </section>
                 </main>
-            </div> 
+            </div>
         </>
     )
 }

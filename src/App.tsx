@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Login from './pages/Login';
 import DashboardHabits from './pages/DashboardHabits';
+import DashboardFinance from './pages/DashboardFinance';
 import { LoginAuth } from './store/LoginStore';
 import type { ReactNode } from 'react';
 import { ApolloProvider } from '@apollo/client/react';
@@ -30,6 +31,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <DashboardHabits />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/finance"
+              element={
+                <PrivateRoute>
+                  <DashboardFinance />
                 </PrivateRoute>
               }
             />

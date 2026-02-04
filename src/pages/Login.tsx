@@ -54,8 +54,6 @@ export default function Login() {
             <main>
                 <section id='modal-login'>
                     <section className='flex flex-col items-center justify-center gap-4'>
-                        {/* <span className="flex items-center justify-center h-20 w-20 ec ec-dart text-6xl pt-12"></span> */}
-                        {/* <span className="flex items-center justify-center h-20 w-20 ec ec-blue-book text-6xl pt-12"></span> */}
                         <span className="flex items-center justify-center h-20 w-20 ec ec-1234 text-6xl pt-12"></span>
                         <span id='title-login'>LifeOps</span>
                     </section>
