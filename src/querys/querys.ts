@@ -22,4 +22,28 @@ export const GET_LAST_FIVE_DATES = gql`query GetLastFiveDates($username: String!
     date
   }
 }
-`
+`;
+
+export const GET_DAILY_HABITS = gql`query GetLastFiveDates($username: String!, $date: timestampz!) {
+  HabitLogs(
+    where: {
+      rsHabit: {
+        rsUser: {
+          username: { _eq: $username }
+        }
+      }
+      date: { _eq: $date}
+    }
+    order_by: { date: desc }
+    distinct_on: date
+    limit: 5
+  ) {
+    date
+    completed
+    description
+    rsHabit {
+      name
+    }
+  }
+}
+`;
