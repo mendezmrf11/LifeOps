@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+/*import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Login from './pages/Login';
 import DashboardHabits from './pages/DashboardHabits';
@@ -50,4 +50,24 @@ function App() {
   )
 }
 
-export default App
+export default <App></App>*/
+import { useEffect, useState } from 'react';
+
+function App() {
+  const [mensaje, setMensaje] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api')
+      .then(res => res.json())
+      .then(data => setMensaje(data.mensaje));
+  }, []);
+
+  return (
+    <div>
+      <h1>{mensaje}</h1>
+    </div>
+  );
+}
+
+export default App;
+
