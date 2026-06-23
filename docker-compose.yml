@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   frontend:
-    container_name: lifeops-frontend
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,7 +15,6 @@ services:
       - lifeops-network
 
   backend:
-    container_name: lifeops-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
