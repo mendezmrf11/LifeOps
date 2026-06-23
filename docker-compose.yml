@@ -1,14 +1,30 @@
-version: '3'
+version: '3.8'
 
 services:
   frontend:
-    build: .
+    container_name: lifeops-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "5173:5173"
     depends_on:
       - backend
+    environment:
+      - VITE_API_URL=http://backend:3000
+    networks:
+      - lifeops-network
 
   backend:
-    build: ./backend
+    container_name: lifeops-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    networks:
+      - lifeops-network
+
+networks:
+  lifeops-network:
+    driver: bridge
