@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - "18"
+
+services:
+  - docker
+
+before_install:
+  - npm install
+  - cd backend && npm install && cd ..
+
+script:
+  - npm run build
+  - docker build -t lifeops-frontend .
+  - docker build -t lifeops-backend ./backend
