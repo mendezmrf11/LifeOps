@@ -15,20 +15,20 @@ pipeline {
 
         stage('Instalar dependencias Frontend') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build Frontend') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Instalar dependencias Backend') {
             steps {
                 dir('backend') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -36,26 +36,26 @@ pipeline {
         stage('Verificar Backend') {
             steps {
                 dir('backend') {
-                    sh 'node --version'
+                    bat 'node --version'
                 }
             }
         }
 
         stage('Docker Build Frontend') {
             steps {
-                sh "docker build -t ${FRONTEND_IMAGE} ."
+                bat "docker build -t %FRONTEND_IMAGE% ."
             }
         }
 
         stage('Docker Build Backend') {
             steps {
-                sh "docker build -t ${BACKEND_IMAGE} ./backend"
+                bat "docker build -t %BACKEND_IMAGE% backend"
             }
         }
 
         stage('Docker Compose Up') {
             steps {
-                sh 'docker compose up -d --build'
+                bat 'docker compose up -d --build'
             }
         }
     }
